@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>theirs</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+    #passwordInput {
+        padding: 10px;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    #passwordButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>hi</h1>
+</header>
+<div class="container">
+    <h2>the stuff</h2>
+    <p>enter the password</p>
+    <div id="passwordForm">
+        <input type="password" id="passwordInput" placeholder="enter password">
+        <button id="passwordButton">Enter</button>
+    </div>
+    <div id="passwordMessage"></div>
+    <div id="protectedContent" style="display: none;">
+        <h3>the goodies</h3>
+        <p>more to be added soon i guess</p>
+        
+        <!-- Add more content here -->
+        <p>what you needa know</p>
+        <ul>
+            <li>the phones are out</li>
+            <li>they might rot there</li>
+            <li>only 1 signal tower approx. 15,000,000 miles away in here</li>
+        </ul>
+        
+<script>
+    const passwordInput = document.getElementById('passwordInput');
+    const passwordButton = document.getElementById('passwordButton');
+    const passwordMessage = document.getElementById('passwordMessage');
+    const protectedContent = document.getElementById('protectedContent');
+
+    const correctPassword = 'qdynasats'; // Replace with your actual password
+
+    passwordButton.addEventListener('click', function() {
+        const enteredPassword = passwordInput.value.trim();
+        if (enteredPassword === correctPassword) {
+            passwordMessage.textContent = 'loading';
+            setTimeout(function() {
+                document.getElementById('passwordForm').style.display = 'none';
+                protectedContent.style.display = 'block';
+            }, 1000);
+        } else {
+            passwordMessage.textContent = 'wrong';
+        }
+    });
+</script>
+
+</body>
+</html>
